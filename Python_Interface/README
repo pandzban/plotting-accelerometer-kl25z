@@ -1,0 +1,9 @@
+If you are using PyCharm you need to download following libraries:
+-matplotlib
+-pyserial
+File->Settings->Project
+<project_name> -> + find on list and press "Install Package"
+
+You also need to enable detached graphs on Pycharm:
+File->Tools->Python Scientific and disable option "show plot in tool windows"
+It's not required in Community version of Pycharm whatsoever.

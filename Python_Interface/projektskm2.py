@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 import time
 from tkinter import *
 from UART import UART
-from Data import Data       #265 linia dla mojego arduino zakomentować,
+from Data import Data       
 
 ser = 0                     ##uart
 data = 0                    ##dane
@@ -28,13 +28,12 @@ def main():
     t1.start()
     t2 = threading.Thread(target=UARTget)
     t2.start()
-    time.sleep(0.12)  #potrzeba czasu na uruchomienie okna u adama napenwo więcej
+    time.sleep(0.12)  
     win1.printConf(data.str)
     ser.start()
     time.sleep(0.12)
     sendUpdate()
     data.updateSelf(size, CurrentConfiguration)
-    win1.settingUpdate(CurrentConfiguration)
     plotter()
 
 
@@ -122,7 +121,6 @@ class Setting:
         self.settingUpdate(FirstConfiguration)
 
     def labels(self):
-        # label1 = Label(self.window, text="Settings", font=("arial", 16, "bold")).place(x=150, y=10)
         label2 = Label(self.window, text="Number of samples", font=("arial", 12)).place(x=10, y=60)
         label3 = Label(self.window, text="Number of bits", font=("arial", 12)).place(x=10, y=120)
         label4 = Label(self.window, text="Resolution", font=("arial", 12)).place(x=10, y=150)
@@ -255,8 +253,6 @@ def sendUpdate():
             CurrentConfiguration = CurrentConfiguration | 0x000200
     size = win1.get_numOfSamples()
     ser.sendSetting(CurrentConfiguration)
-    # data.tabReset(size, CurrentConfiguration)
-    # data.makeConfigurationString()
     data.updateSelf(size, CurrentConfiguration)
     win1.printConf(data.str)
     win1.settingUpdate(CurrentConfiguration)

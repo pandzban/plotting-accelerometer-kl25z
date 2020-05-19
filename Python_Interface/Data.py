@@ -96,7 +96,7 @@ class Data:
             self.str = self.str + 'Accumulation Enabled   \n'
         else:
             self.str = self.str + 'Accumulation Disabled    \n'
-        self.str = self.str + 'Wartość akumulacji ' + str(self.AccumulationVal * 8 + 8) + '   \n'
+        self.str = self.str + 'Accumulation value ' + str(self.AccumulationVal * 8 + 8) + '   \n'
         if self.bit:
             self.str = self.str + "Bit resolution : 14   \n"
         else:
@@ -107,9 +107,6 @@ class Data:
         else:
             self.str = self.str + 'LowNoise Disabled          \n'
         self.str = self.str + 'Interval time ' + str(self.TimeInterval * 2 + 2) + '    \n'
-
-    def bitInversion(self, Value, numberOfBits):
-        return (1 << numberOfBits) - 1 - Value
 
     def AccumulationState(self):
         return self.Accumulation

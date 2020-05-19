@@ -1,0 +1,5 @@
+It uses:
+-MDK Middleware 6.1.1;
+-Keil Kinetis_KLxx_DFP which needs to be downloaded from the keil website directly(if it doesn't work try other web browser)
+-CMSIS packet 4.1.1
+It also uses DEBUG-APP_Pemicro_v108.SDA driver but MSD_FRDM... should also work.
